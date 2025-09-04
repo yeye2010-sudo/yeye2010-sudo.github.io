@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Homework Assignment</title>
+    <style>
+        div{
+            animation-duration:2s;
+            animation-fill-mode:backwards;
+            animation-name:movingTable;
+            animation-delay:1s;
+            position:relative;
+            animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+        }
+        @keyframes movingTable{
+            0%{right:0px}
+            20%{right:100px}
+            40%{right:300px}
+            80%{right:100px}
+            100%{right:0px}
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <table border="1" style="text-align: center; margin-left: auto; margin-right:auto; width:500px;height:300px">
+        <tr>
+            <td rowspan="2">No</td>
+            <td colspan="2">Average</td>
+            <td rowspan="2">Red Eyes</td>
+        </tr>
+        <tr>
+            <td>height</td>
+            <td>weight</td>
+        </tr>
+        <tr>
+            <td>Males</td>
+            <td>1.9</td>
+            <td>0.003</td>
+            <td>40%</td>
+        </tr>
+        <tr>
+            <td>Females</td>
+            <td>1.9</td>
+            <td>0.003</td>
+            <td>40%</td>
+        </tr>
+    </table>
+    </div>
+    <div>
+    <h3 style="text-align:center;color:blue;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">
+        Created by Zayar Lin Phyo as homework
+    </h3>
+    </div>
+</body>
+</html>
