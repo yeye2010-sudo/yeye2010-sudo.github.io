@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="CSS/style.css" >
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel and Tour</title>
+</head>
+<body>
+    <script>
+        function showSideBar(){
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display='flex';
+        }
+        function hideSideBar(){
+            const sidebar = document.querySelector('.sidebar');
+            sidebar.style.display='none';
+        }
+    </script>
+    <nav class="nav">
+        <a href="index.html">
+            <img src="images/logo.jpg" alt="logo" class="nav_image">
+        </a>
+        <ul class="nav_item">
+            <li><a href="">Home</a></li>
+            <li><a href="">Popular</a></li>
+            <li><a href="">Package</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="" class="get_started">Get Start!</a></li>
+        </ul>
+        <ul class="nav_item" class="sidebar">
+            <li class="hideMobile">Shopping Mall</li>
+            <li class="button" onclick="showSideBar()"><a href="#""></li>
+            <li><a href="">Home</a></li>
+            <li><a href="">Popular</a></li>
+            <li><a href="">Package</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="" class="get_started">Get Start!</a></li>
+        </ul>
+    </nav>
+
+    <!--Start banner section :0-->
+    <section>
+        <div class="bunner">
+            <img src="images/banner.jpg" alt="airplane image" class="banner_image">
+            <div class="banner_text">
+                <h1>Turning your travel dreams into reality!!!</h1>
+                <p>Explore, discover, Create memories that last a lifetime</p>
+                <a href="">Book Now</a>
+            </div>
+        </div>
+    </section>
+    <!--End the banner section ;(-->
+
+    <!--Start Popular section-->
+    <section id="popular">
+        <div class="popular">
+            <h2>Popular Destination</h2>
+            <small>Discover the most loved destination around the globe!!!</small>
+        </div>
+        <div class="popular_card">
+            <div class="popular_item">
+                <img src="images/place1.jpg" alt=" this is a popular place image">
+                <h3>Divine Majesty at Jagannath Temple</h3>
+                <p>Puri, Odisha,India</p>
+                <p>2,000 USD <button>BOOK</button></p> 
+            </div>
+            <div class="popular_item">
+                <img src="images/place2.jpg" alt="this is a popular place image">
+                <h3>skdjasdjsajdks</h3>
+                <p>skdjskdj</p>
+                <p>3000 USD <button>BOOK</button></p>
+            </div>
+            <div class="popular_item">
+                <img src="images/place1.jpg" alt="this is a popular place image">
+                <h3>sjdsjdks</h3>
+                <p>dskdjksldjsk</p>
+                <p>4000 USD <button>BOOK</button></p>
+            </div>
+        </div>
+    </section>
+    <!--End the popular section-->
+    <!--start the about section-->
+    <section id="about">
+        <div class="about">
+            <h2>About Us</h2>
+        </div>
+        <div class="about_items">
+            <img src="images/travel1.jpg" alt="this is travel photo" class="about_image">
+            <div ="about_text">
+            <p>
+                Welcome to Your travel Journey where wanderlust meets exceptional service. We are more than just a travel ad tour agency. We are your trusted companion in exploring the world's wonders. Whetheryou are dreaming of a peaceful beath escape, a cultural city your, a romantic honeymoon or an adrenaline filled adventure we bring your vision to life with precision passion and care. Our team of travel experts combines years of industry experience with local and international insights to curate journets that are as unique as you are. From seamless flight bookings and comfortable accommodations to guided tours and hidden gems, we handle every detail so you can focus on making memoried. At your travel journey, we believe that travel is not just about visiting places- it is about experiencing them. That's why we go beyond the ordinary, crafting personalized itineraries that reflect your style preferences and budget.
+            </p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
