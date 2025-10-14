@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <h1>Array Basic</h1>
+    <script>
+        let array = [2,43,44,5];
+        console.log(array[3]); //one element using index
+
+        //the number of elements in an array
+        let numberArray = array.length;
+        console.log(numberArray);
+
+        //add or delete the last index of the array
+        let player =['ronaldo','messi','neymar','hazard'];
+        console.log(player);
+        let playerPushed = player.push("Mbappe");
+        console.log(playerPushed);
+        let playerPopped = player.pop();
+        console.log(playerPopped);
+
+        //add or delete the first index of the array
+        let drink =['milk','water','juice','coffee'];
+        let drinkUnshifted = drink.unshift("lemonade");
+        console.log(drinkUnshifted);
+        let drinkShifted = drink.shift();
+        console.log(drinkShifted);
+
+        let subjects= new Array['english','math','biology','computer science','IT','Physics','Calculus','english litature'];
+        let sorted_subject = subjects.sort(); //a-z
+        console.log(sorted_subject);
+        let reverse_subjects = subjects.reverse();//reverse index
+        console.log(reverse_subjects);
+        let sorted_reverse_subject = subjects.sort().reverse();
+        console.log(sorted_reverse_subject);// z-a
+
+        //array to normal string or text
+        let subjectsList = subjects.toString();
+        console.log(subjectsList);
+        // string to array!!!
+        let names="Mg mg, mya mya, aung aung, kyaw gyi";
+        let namesArray = names.split(",");
+        console.log(namesArray);
+
+        let array1 = [1,2,3];
+        let array2 = [4,5,6];
+        let array3 = [7,8,9];
+        //adding two arrays in a single array
+        const array4 = array1.concat(array2);
+        console.log(array4);
+        //adding two or more arrays in a single array
+        let arrayTotal =[...array1,...array2,...array3];
+        console.log(arrayTotal);
+    </script>
+</body>
+</html>

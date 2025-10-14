@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+</head>
+<body>
+    <script>
+        let firstname = "Gojo ";
+        let lastname ='Satoru';
+        // add two string into ones :)
+        let fullname = firstname.concat(lastname);
+        let firstlength = firstname.length;
+        let lastlength = lastname.length;
+        // length of the string :)
+        console.log(firstlength);
+        console.log(lastlength);
+        document.write("<h3>The strongest socerrcer of current is ${fullname}</h3>");
+        let domainExpension = "Infinity           Void";
+        console.log(domainExpension.trim()) ;
+        // remove the longer space between words 
+
+        // lower case of all characters
+        let lowercase = fullname.toLowerCase();
+        console.log(lowercase);
+        // upper case of all characters
+        let uppercase = fullname.toUpperCase();
+        console.log(uppercase);
+
+        // search the character or word
+        let sentence = "It was cold outside. The clock was striking three.";
+        let search = sentence.search("ccold");
+
+        //replace the words with another 
+        let statement = "The strongest socerror is Gojo Satoru";
+        let replace = statement.replace("Gojo Satoru","Sukuna");
+        document.write(replace);
+
+
+    </script>
+</body>
+</html>
