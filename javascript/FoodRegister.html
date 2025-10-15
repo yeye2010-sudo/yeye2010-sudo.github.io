@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Register</title>
+</head>
+<body>
+    <script>
+        var foodList = [];
+        var itemNumber = 1;
+
+        function displayData(){
+            // Get the data from form
+            let Name = document.forms["Form"]["foodName"].value;
+            let Price = parseFloat(document.forms["Form"]["foodPrice"].value);
+            let Amount = parseInt(document.forms["Form"]["foodAmount"].value);
+
+            // Validate inputs
+            if (!Name || !Price || !Amount) {
+                alert("Please fill all fields");
+                return;
+            }
+
+            // Create food object
+            let food = {
+                number: itemNumber++,
+                food_name: Name,
+                food_price: Price,
+                food_amount: Amount,
+                total: Price * Amount
+            };
+
+            // Add to foodList
+            foodList.push(food);
+
+            // Display in table
+            displayTable();
+
+            // Clear form
+            document.getElementById("Form").reset();
+        }
+
+        function displayTable(){
+            let tbody = document.querySelector("tbody");
+            tbody.innerHTML = ""; // Clear existing data
+
+            // Add each food item to table
+            foodList.forEach(function(food) {
+                let row = document.createElement("tr");
+                
+                row.innerHTML = 
+                    "<td>" + food.number + "</td>" +
+                    "<td>" + food.food_name + "</td>" +
+                    "<td>" + food.food_price.toFixed(2) + "</td>" +
+                    "<td>" + food.food_amount + "</td>";
+                
+                tbody.appendChild(row);
+            });
+
+            // Update total price
+            updateTotalPrice();
+        }
+
+        function updateTotalPrice(){
+            let total = 0;
+            foodList.forEach(function(food) {
+                total += food.total;
+            });
+            
+            document.getElementById("totalPrice").innerText = total.toFixed(2);
+        }
+    </script>
+    <h1>Food Register Form</h1>
+    <form id="Form" align="center">
+        <label for="name">Food Product</label>
+        <input type="text" name="foodName" id="name">
+        <br>
+        <label for="price">Price</label>
+        <input type="number" step="0.01" name="foodPrice" id="price">
+        <br>
+        <label for="amount">Quantity</label>
+        <input type="number" name="foodAmount" id="amount">
+        <br>
+        <button type="button" onclick="displayData()">Confirm</button>
+    </form>
+    <table  border="1" cellspacing="5" cellpadding="50" align="center">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Amount</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3"><strong>Grand Total</strong></td>
+                <td id="totalPrice"><strong>0.00</strong></td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

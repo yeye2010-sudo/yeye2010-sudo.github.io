@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event</title>
+</head>
+<body>
+    <!--
+
+       onmouseover
+       onmousecenter
+
+       onmouseleave
+       onmouseout
+
+       onmousedown
+       onclick
+
+    -->
+    <!--
+       onkeyup
+       onkeydown
+       onchange
+    -->
+    <h1>Event lessons</h1>
+    <img src="" alt="" id="myImage" width="300" height="300">
+    <input type="text" id="myInput" onchange="sayHi()"> 
+    <p id="result"></p>
+    <script>
+        function normal(){
+            let Image = document.getElementById("myImage");
+            Image.style.width = '300px';
+            Image.style.height = '300px';
+        }
+        function getBigger(){
+            let Image = document.getElementById("myImage");
+            Image.style.width = '500px';
+            Image.style.height = '500px';
+        }
+        function sayHi(){
+            let res = document.getElementById("myInput").value;
+            document.getElementById('result').innerText = res;
+        }
+    </script>
+</body>
+</html>

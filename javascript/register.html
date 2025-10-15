@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Register</title>
+</head>
+<body>
+    <script>
+        function showText(){
+            alert("This work!!!");
+        }
+        function displayData(){
+            var studentList = [];
+            //get the data of the students first
+            let Name = document.forms["Form"]["studentName"].value;
+            let Age = document.forms["Form"]["studentAge"].value;
+            let Address =document.forms["Form"]["studentAddress"].value;
+
+            console.log(Name);
+            console.log(Age);
+            console.log(Address);
+
+            //create object student
+            let student ={
+                student_name: Name,
+                student_age: Age,
+                student_address: Address, 
+            };
+            //push the array
+            studentList.push(student);
+            console.log(studentList);
+
+            //show the data of the students
+            let html = '';
+            for(let index=0;index<studentList.length;index++){
+                let Student = studentList[index];
+                html += 
+                `<tr>
+                    <td>${index+1}</td>
+                    <td>${Student.student_name}</td>
+                    <td>${Student.student_age}</td>
+                    <td>${Student.student_address}</td>
+                </tr>`;
+            };
+            document.getElementById("result").innerHTML = html;
+        
+        }
+        
+    </script>
+    <h1>Student Register</h1>
+    <form name="Form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="studentName">
+        <br>
+        <label for="age">Age</label>
+        <input type="number" id="age" name="studentAge">
+        <br>
+        <label for="address">Address</label>
+        <textarea id="address" name="studentAddress"></textarea>
+        <br>
+        <button type="button" onclick="displayData()" width="50" height="20">Register</button>
+    </form>
+    <h1>Student list</h1>
+    <table border="1" cellspacing="1" cellpadding="40">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Address</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr id="result"></tr>
+        </tbody>
+    </table>
+</body>
+</html>
