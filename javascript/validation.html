@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation</title>
+</head>
+<body>
+    <form action="" name="myForm" onsubmit="return validationForm()">
+        <label for="email">Email</label><br>
+        <input type="email" name="myEmail" id="email"><span id="email_error"></span><br>
+
+        <label for="password">Password</label><br>
+        <input type="password" name="myPassword" id="password"><span id="password_error"></span><br>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+    <script>
+        const userEmail = "yeye20874@gmail.com";
+        const userPassword = "10872";
+        function validationForm(){
+            var vaild = true;
+            //alert("it is working!!!");
+            let email = document.querySelector("#email").value;
+            let password = document.querySelector("#password").value;
+
+            console.log(email,password);
+            if (email===''){
+                let emailError = document.getElementById("email_error");
+                emailError.innerHTML = 'your email is required';
+                vaild = false;
+            }else if(email !== userEmail){
+                let emailInvalid = document.getElementById("email_error");
+                emailInvalid.innerHTML = 'the email is invalid try again';
+                emailInvalid.style.color = 'Red';
+            }
+            else{
+                emailError.innerHTML = '';
+            }
+            
+            if (password===''){
+                let passwordError = document.getElementById("password_error");
+                passwordError.innerHTML = 'your password is required';
+                vaild = false;
+            }else if(password !== userPassword){
+                let passwordInvalid  = document.getElementById("password_error");
+                passwordInvalid.innerHTML = 'the password is invalid try again';
+                passwordInvalid.style.color = 'Red';
+            }
+            else{
+                passwordError.innerHTML = '';
+            }
+            return false;
+            console.log(vaild);
+        
+        };
+        
+    </script>
+</body>
+</html>

@@ -4,33 +4,96 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Register</title>
+    <style>
+        form {
+            display: table;
+        }
+        form div {
+            display: table-row;
+        }
+        label, input, textarea {
+            display: table-cell;
+            margin: 5px;
+        }
+        label {
+            width: 100px;
+            text-align: right;
+            padding-right: 10px;
+        }
+        input, textarea {
+            width: 200px;
+        }
+        span {
+            color: red;
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body>
+    
     <script>
+       let hasError = false;
+       var studentList = [];
         function showText(){
-            alert("This work!!!");
+            alert("This work!!!")
         }
         function displayData(){
-            var studentList = [];
+            hasError = false;
+            
             //get the data of the students first
-            let Name = document.forms["Form"]["studentName"].value;
-            let Age = document.forms["Form"]["studentAge"].value;
-            let Address =document.forms["Form"]["studentAddress"].value;
+            let Name = document.forms["Form"]["studentName"].value.trim();
+            let Age = document.forms["Form"]["studentAge"].value.trim();
+            let Address =document.forms["Form"]["studentAddress"].value.trim();
 
             console.log(Name);
             console.log(Age);
             console.log(Address);
 
             //create object student
-            let student ={
+            
+            if (Name=== ""){
+                hasError = true;
+                let nameError = document.getElementById("name_error");
+                nameError.innerHTML = 'Name must be required :)';
+            }else{
+                let nameError = document.getElementById("name_error");
+                nameError.innerHTML = '';
+            }
+
+
+            if (Age ===""){
+                hasError = true;
+                let ageError = document.getElementById("age_error");
+                ageError.innerHTML = 'Age must be required';
+            }
+            else if(Age <= 0 ||Age >= 150 || isNaN(Age)){
+                let ageError = document.getElementById("age_error");
+                ageError.innerHTML = 'Age must be greater than 0  or less than 150 :)';
+                hasError = true;
+            }
+            else{
+                let ageError = document.getElementById("age_error");
+                ageError.innerHTML = '';
+            }
+
+
+            if (Address===""){
+                let addressError = document.getElementById("address_error");
+                addressError.innerHTML = 'Address must be required';
+                hasError = true;
+            }else{
+                let addressError = document.getElementById("address_error");
+                addressError.innerHTML = '';
+            }
+
+            if (hasError) return false ;
+            //create the object of each student
+            let student = {
                 student_name: Name,
                 student_age: Age,
-                student_address: Address, 
+                student_address: Address
             };
-            //push the array
             studentList.push(student);
-            console.log(studentList);
-
             //show the data of the students
             let html = '';
             for(let index=0;index<studentList.length;index++){
@@ -44,22 +107,33 @@
                 </tr>`;
             };
             document.getElementById("result").innerHTML = html;
-        
+            
+            // Clear form after successful submission
+            document.forms["Form"].reset();
         }
         
     </script>
     <h1>Student Register</h1>
     <form name="Form">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="studentName">
-        <br>
-        <label for="age">Age</label>
-        <input type="number" id="age" name="studentAge">
-        <br>
-        <label for="address">Address</label>
-        <textarea id="address" name="studentAddress"></textarea>
-        <br>
-        <button type="button" onclick="displayData()" width="50" height="20">Register</button>
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="studentName">
+            <span id="name_error"></span>
+        </div>
+        <div>
+            <label for="age">Age</label>
+            <input type="number" id="age" name="studentAge">
+            <span id="age_error"></span>
+        </div>
+        <div>
+            <label for="address">Address</label>
+            <textarea id="address" name="studentAddress"></textarea>
+            <span id="address_error"></span>
+        </div>
+        <div>
+            <label></label>
+            <button type="button" onclick="displayData()" width="50" height="20">Register</button>
+        </div>
     </form>
     <h1>Student list</h1>
     <table border="1" cellspacing="1" cellpadding="40">
@@ -71,8 +145,8 @@
                 <th>Address</th>
             </tr>
         </thead>
-        <tbody>
-            <tr id="result"></tr>
+        <tbody id="result">
+            
         </tbody>
     </table>
 </body>
