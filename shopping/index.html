@@ -3,93 +3,278 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping mall</title>
+    <title>Kyaw Gyi Shopping Mall</title>
+    
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
-    <script>
-        function showSideBar(){
-            const sidebar = document.querySelector('.sidebar');
-            sidebar.style.display = 'flex';
-        }
-        function hideSideBar(){
-            const sidebar = document.querySlector('.sidebar');
-            sidebar.style.display = 'none';
-        }
-    </script>
+   
     <!--Navigation start-->
     <nav class="nav">
         
         <ul>
             <li>
-                <h2>Kyaw Gyi</h2>
+                <img src="images/ရတနာကြွယ်.png" style="width:75px;height: 75px;">
             </li>
             <li>
-                <a href="#">Home</a>
+                <h2>ရတနာကြွယ်</h2>
+            </li>
+
+            <li>
+                <a href="#stores">Stores</a>
             </li>
             <li>
-                <a href="#">Stores</a>
+                <a href="#promotions">Promotions</a>
             </li>
             <li>
-                <a href="#">Entertainment</a>
+                <a href="#events">Events</a>
             </li>
             <li>
-                <a href="#">Promotions</a>
+                <a href="#services">Services</a>
             </li>
             <li>
-                <a href="#">Events</a>
+                <a href="#about">About</a>
             </li>
             <li>
-                <a href="#">Services</a>
-            </li>
-            <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
+                <a href="#contact">Contact</a>
             </li>
             <li>
                 <i class="fa-solid fa-bars"></i>
             </li>
         </ul>
-        <ul class="sidebar">
-            <li>
-                <a href="#">Home</a>
-            </li>
-            <li>
-                <a href="#">Stores</a>
-            </li>
-            <li>
-                <a href="#">Entertainment</a>
-            </li>
-            <li>
-                <a href="#">Promotions</a>
-            </li>
-            <li>
-                <a href="#">Events</a>
-            </li>
-            <li>
-                <a href="#">Services</a>
-            </li>
-            <li>
-                <a href="#">About</a>
-            </li>
-            <li>
-                <a href="#">Contact</a>
-            </li>
-            <li>
-                <i class="fa-solid fa-bars"></i>
-            </li>
-        </ul>
+        
     </nav>
     <!--end the navigation-->
     <!--start the banner section-->
     <section id="banner">
         <div class="banner">
-            <div>
-                
-            </div>
+           <div class="banner-text">
+            <a href="form.html">Buy ticket</a>
+            <p>Get ticket for membership with 20%</p>
+           </div>
         </div>
     </section>
+    <!--end the banner section-->
+    <!-- start the shops section-->
+     <section id="shops">
+      <h2>Available Shops</h2>
+      <div class="shops">
+        <div class="shop_card fade-up">
+            <a href=""><img src="images/clotheslogo.jpg" alt="Fashion Store"></a>
+            <p>Fashion Store</p>
+        </div>
+        <div class="shop_card fade-up">
+            <a href=""><img src="images/electronicShopLogo.png" alt="Electronics Hub"></a>
+            <p>Electronics Hub</p>
+        </div>
+        <div class="shop_card fade-up">
+           <a href=""><img src="images/foodShopLogo.png" alt="Gourmet Food Court"></a>
+            <p>Gourmet Food Court</p>
+        </div>
+        <div class="shop_card fade-up">
+            <a href=""><img src="images/clotheslogo.jpg" alt="Jewelry Collection"></a>
+            <p>Jewelry Collection</p>
+        </div>
+      </div>
+     </section>
+     <!--End the shops section-->
+
+     <!-- About Section -->
+     <section id="about">
+        <div class="about-container">
+            <h2>About Kyaw Gyi Shopping Mall</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Welcome to Your Ultimate Shopping Destination</h3>
+                    <p>Kyaw Gyi Shopping Mall is more than just a shopping center – it's a vibrant community hub where modern retail meets traditional hospitality. Located in the heart of the city, our mall offers an unparalleled shopping and entertainment experience for visitors of all ages.</p>
+                    
+                    <h4>Our Mission</h4>
+                    <p>To provide a world-class shopping environment that combines convenience, quality, and exceptional customer service. We strive to create memorable experiences for every visitor while supporting local businesses and international brands alike.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature">
+                            <i class="fas fa-store"></i>
+                            <span>100+ Premium Stores</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-utensils"></i>
+                            <span>Gourmet Food Court</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-car"></i>
+                            <span>Free Parking</span>
+                        </div>
+                        <div class="feature">
+                            <i class="fas fa-wifi"></i>
+                            <span>Free Wi-Fi</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+
+     <!-- Promotions Section -->
+     <section id="promotions">
+        <h2>Special Promotions</h2>
+        <div class="promotions-grid">
+            <div class="promo-card">
+                <div class="promo-icon">
+                    <i class="fas fa-percentage"></i>
+                </div>
+                <h3>Weekend Special</h3>
+                <p>Get up to 50% off on selected items every weekend!</p>
+                <div class="promo-badge">This Weekend</div>
+            </div>
+            <div class="promo-card">
+                <div class="promo-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h3>Membership Rewards</h3>
+                <p>Join our VIP membership and enjoy exclusive discounts and early access to sales.</p>
+                <div class="promo-badge">VIP Only</div>
+            </div>
+            <div class="promo-card">
+                <div class="promo-icon">
+                    <i class="fas fa-birthday-cake"></i>
+                </div>
+                <h3>Birthday Special</h3>
+                <p>Celebrate your birthday with us and get 20% off your entire purchase!</p>
+                <div class="promo-badge">Limited Time</div>
+            </div>
+            <div class="promo-card">
+                <div class="promo-icon">
+                    <i class="fas fa-tags"></i>
+                </div>
+                <h3>Student Discount</h3>
+                <p>Students get 15% off with valid ID. Valid on all regular priced items.</p>
+                <div class="promo-badge">Show ID</div>
+            </div>
+        </div>
+     </section>
+     <!--Events Section-->
+     <section>
+        <h2>Events</h2>
+     </section>
+     <!-- Services Section -->
+     <section id="services">
+        <h2>Our Services</h2>
+        <div class="services-container">
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                </div>
+                <h3>Personal Shopping</h3>
+                <p>Our expert stylists will help you find the perfect outfit for any occasion.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <h3>Home Delivery</h3>
+                <p>Shop from the comfort of your home with our convenient delivery service.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-gift-card"></i>
+                </div>
+                <h3>Gift Cards</h3>
+                <p>Perfect gifts for your loved ones. Available in various denominations.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <h3>Repair Services</h3>
+                <p>Professional repair services for electronics, clothing alterations, and more.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-baby"></i>
+                </div>
+                <h3>Kid's Play Area</h3>
+                <p>Safe and fun play area for children while parents enjoy their shopping.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">
+                    <i class="fas fa-concierge-bell"></i>
+                </div>
+                <h3>Concierge Service</h3>
+                <p>Premium assistance for VIP members including personal shopping and reservations.</p>
+            </div>
+        </div>
+     </section>
+
+     <!-- Contact Section -->
+     <section id="contact">
+        <h2>Get In Touch</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <h4>Phone Number</h4>
+                        <p>+95 9 123 456 789</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email Us</h4>
+                        <a href="mailto:info@kyawgyi-mall.com" class="email-btn">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Email
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Visit Us</h4>
+                        <p>123 Main Street<br>Yangon, Myanmar</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="social-media">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link facebook" title="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </a>
+                    <a href="#" class="social-link instagram" title="Instagram">
+                        <i class="fab fa-instagram"></i>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="#" class="social-link twitter" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                        <span>Twitter</span>
+                    </a>
+                    <a href="#" class="social-link telegram" title="Telegram">
+                        <i class="fab fa-telegram-plane"></i>
+                        <span>Telegram</span>
+                    </a>
+                    <a href="#" class="social-link viber" title="Viber">
+                        <i class="fab fa-viber"></i>
+                        <span>Viber</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+     </section>
+
+     <!-- Footer -->
+     <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Kyaw Gyi Shopping Mall. All rights reserved.</p>
+            <p>Your Ultimate Shopping Destination</p>
+        </div>
+     </footer>
+
 </body>
 </html>

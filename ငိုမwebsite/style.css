@@ -1,0 +1,379 @@
+  /* set the main colors and style values*/
+  :root{
+      --bg1:#3b2c25;
+      --bg2:#7b5e3d;
+      --bg3:#bfa37a;
+      --card:#fff8f0;
+      --frame:#5b3a29;
+      --accent:#a67c52;
+      --text:#f8f4ef;
+      --shadow: 0 10px 25px rgba(43,31,24,0.25);
+      --navbar-bg: rgba(59, 44, 37, 0.95);
+      --navbar-hover: rgba(166, 124, 82, 0.3);
+    }
+    
+    html {
+      scroll-behavior: smooth;
+    }
+    
+    html, body {
+      height: 100%;
+    }
+    
+    body {
+      margin: 0;
+      padding-top: 76px; 
+      font-family: Georgia, 'Times New Roman', serif;
+      color: var(--text);
+      background: linear-gradient(135deg, var(--bg1) 0%, var(--bg2) 40%, var(--bg3) 100%), url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+      background-attachment: fixed;
+      background-size: cover;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Custom Navigation Styles */
+    .custom-navbar {
+      background: var(--navbar-bg) !important;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .navbar-brand {
+      font-weight: bold;
+      font-size: 1.5rem;
+      color: var(--accent) !important;
+      transition: all 0.3s ease;
+    }
+    
+    .navbar-brand:hover {
+      color: #f8f4ef !important;
+      transform: scale(1.05);
+    }
+    
+    .nav-link {
+      position: relative;
+      padding: 0.8rem 1rem !important;
+      transition: all 0.3s ease;
+      color: var(--text) !important;
+    }
+    
+    .nav-link:hover {
+      background: var(--navbar-hover);
+      border-radius: 8px;
+      color: var(--accent) !important;
+      transform: translateY(-2px);
+    }
+    
+    .nav-link.active {
+      background: var(--accent);
+      border-radius: 8px;
+      color: white !important;
+    }
+    
+    .dropdown-menu {
+      background: var(--navbar-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    }
+    
+    .dropdown-item {
+      color: var(--text) !important;
+      transition: all 0.3s ease;
+    }
+    
+    .dropdown-item:hover {
+      background: var(--navbar-hover);
+      color: var(--accent) !important;
+      transform: translateX(5px);
+    }
+    
+    .btn-outline-light:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    /* Header Styles */
+    .main-header {
+      padding: 120px 0 80px 0;
+      text-align: center;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+    h1, .display-3 {
+      margin: 0;
+      font-size: 3rem;
+      letter-spacing: 2px;
+      color: var(--accent);
+      text-shadow: 2px 4px 8px rgba(0,0,0,0.6);
+      animation: fadeInUp 1s ease;
+    }
+    
+    p.lead {
+      margin-top: 20px;
+      color: #e1d6c8;
+      font-style: italic;
+      font-size: 1.2rem;
+      animation: fadeInUp 1s ease 0.3s both;
+    }
+    
+    .btn-primary {
+      background: var(--accent);
+      border: var(--accent);
+      transition: all 0.3s ease;
+      animation: fadeInUp 1s ease 0.6s both;
+    }
+    
+    .btn-primary:hover {
+      background: var(--bg1);
+      border-color: var(--bg1);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+    
+    /* Join Gang Banner */
+    .join-banner-container {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .join-banner {
+      position: relative;
+      width: 100%;
+      min-height: 800px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: 
+        linear-gradient(135deg, rgba(59, 44, 37, 0.8), rgba(123, 94, 61, 0.7)),
+        url('images/bannerImage.jpg') center/cover;
+      border: none;
+      border-radius: 0;
+      padding: 60px 40px;
+      backdrop-filter: blur(2px);
+      box-shadow: inset 0 0 100px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+    
+    .join-banner::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(166, 124, 82, 0.1), transparent);
+      animation: shimmer 3s ease-in-out infinite;
+      z-index: 1;
+    }
+    
+    .join-banner::after {
+      content: 'images/b';
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      opacity: 0.3;
+      z-index: 1;
+    }
+    
+    .join-banner:hover {
+      box-shadow: inset 0 0 150px rgba(166, 124, 82, 0.2);
+    }
+    
+    .join-btn {
+      position: relative;
+      z-index: 2;
+      font-size: 1.1rem;
+      font-weight: bold;
+      padding: 12px 30px;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+      border: none;
+      background: linear-gradient(45deg, var(--accent), var(--bg2));
+      transition: all 0.3s ease;
+    }
+    
+    .join-btn:hover {
+      background: linear-gradient(45deg, var(--bg1), var(--accent));
+      transform: translateY(-2px);
+    }
+    
+    @keyframes shimmer {
+      0% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+      }
+      50% {
+        transform: translateX(100%) translateY(100%) rotate(45deg);
+      }
+      100% {
+        transform: translateX(-100%) translateY(-100%) rotate(45deg);
+      }
+    }
+    .gallery-wrap {
+      padding: 80px 0;
+      min-height: 100vh;
+    }
+    .gallery .card {
+      background: rgba(255,248,240,0.1);
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(255,255,255,0.15);
+      transition: all 0.4s ease;
+      backdrop-filter: blur(5px);
+    }
+    .gallery .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.4);
+      background: rgba(54, 49, 43, 0.2);
+      border-color: var(--accent);
+    }
+    .frame {
+      width: 100%;
+      background: linear-gradient(180deg, #f7efe6, #d1bda2);
+      padding: 15px;
+      border-radius: 10px;
+      border: 3px solid var(--accent);
+      box-shadow: inset 0 2px 6px rgba(255,255,255,0.25), 0 8px 20px rgba(0,0,0,0.4);
+      overflow: hidden;
+    }
+    .card-img {
+      display: block;
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 6px;
+      transition: transform 0.3s ease;
+    }
+    
+    .card:hover .card-img {
+      transform: scale(1.05);
+    }
+    
+    .placeholder-img {
+      height: 250px;
+      background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+      border-radius: 6px;
+    }
+    
+    .placeholder-card:hover {
+      border-color: var(--accent);
+    }
+
+    .caption {
+      padding: 15px 0;
+      text-align: center;
+    }
+    
+    .card-title {
+      color: var(--accent);
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .meta {
+      font-size: 0.85rem;
+      color: #d2c0a6;
+      line-height: 1.4;
+    }
+    
+    /* Modal Styles */
+    .modal-content {
+      background: var(--navbar-bg);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+    }
+    
+    .modal-body {
+      color: var(--text);
+    }
+    
+    .form-control, .form-select {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--text);
+    }
+    
+    .form-select option {
+      background: var(--bg1);
+      color: var(--text);
+    }
+    
+    .form-select option[value=""] {
+      color: rgba(248, 244, 239, 0.9) !important;
+      font-style: italic;
+    }
+    
+    .form-control:focus, .form-select:focus {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: var(--accent);
+      box-shadow: 0 0 0 0.25rem rgba(166, 124, 82, 0.25);
+      color: var(--text);
+    }
+    
+    .form-control::placeholder {
+      color: rgba(248, 244, 239, 0.7);
+    }
+    
+    .form-label {
+      color: var(--text);
+      font-weight: 500;
+    }
+    
+    .form-check-input:checked {
+      background-color: var(--accent);
+      border-color: var(--accent);
+    }
+    
+    /* animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    section {
+      padding: 80px 0;
+    }
+
+    /* responsive for phone and tablet */
+    @media (max-width: 768px) {
+      .display-3, h1 {
+        font-size: 2.2rem;
+      }
+      
+      .main-header {
+        padding: 100px 0 60px 0;
+      }
+      
+      .card-img, .placeholder-img {
+        height: 200px;
+      }
+      
+      body {
+        padding-top: 60px;
+      }
+    }
+    
+    @media (max-width: 520px) {
+      .display-3, h1 {
+        font-size: 1.8rem;
+      }
+      
+      .card-img, .placeholder-img {
+        height: 180px;
+      }
+    }

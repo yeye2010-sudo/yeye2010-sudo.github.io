@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="formCss.css" type="text/css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading">Shopping Membership</h1>
+        <form id="bookingform">
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" name="fullname" class="input-field">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" name="email" class="input-field">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="phone number">Phone Number</label>
+                    <input type="tel" name="phone" class="input-field">
+                </div>
+                <div class="form-group">
+                    <label for="type">Member type</label>
+                    <select name="membertype" id="membertype" class="input-field">
+                        <option value="25000">1 month -25000 kyat</option>
+                        <option value="100000">6 month - 100000 kyat</option>
+                        <option value="150000">1 year - 150000 kyat</option>
+
+                    </select>
+                </div>
+            </div>
+            <div class="price-box">
+                <p class="summary-heading">Membership Summary</p>
+                <p class="price-line">
+                    <span>Subtotal</span>
+                    <span id="subtotal">
+                        0 kyats
+                    </span>
+                </p>
+                <p class="price-line discount hidden" id="discountRow">
+                    <span>20% discount: </span>
+                    <span id="discount">0 kyats</span>
+                </p>
+                <p class="price-line">
+                    <span>Total: </span>
+                    <span id="totalPrice">
+                        0 kyats
+                    </span>
+                </p>
+            </div>
+            <div class="submit-row">
+                <button class="button-book">Comfirm</button>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>

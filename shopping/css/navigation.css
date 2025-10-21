@@ -1,0 +1,62 @@
+/* ============ NAVIGATION STYLES ============ */
+.nav {
+    z-index: 1000;
+    background: linear-gradient(135deg, rgb(25, 226, 159), rgb(20, 200, 140));
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.nav > ul {
+    gap: 20px;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    padding: 15px 30px;
+    flex-wrap: wrap;
+}
+
+.nav > ul a {
+    text-decoration: none;
+    padding: 12px 18px;
+    color: black;
+    font-weight: 500;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.nav > ul a:hover {
+    background-color: black;
+    color: aqua;
+}
+
+.nav > ul li:first-child,
+.nav > ul li:nth-child(2) {
+    font-size: larger;
+    margin-right: auto;
+}
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .nav > ul {
+        padding: 10px 15px;
+        gap: 10px;
+    }
+    
+    .nav > ul a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+    }
+    
+    .nav > ul li:first-child img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+    
+    .nav > ul li:nth-child(2) h2 {
+        font-size: 1.2rem;
+    }
+}

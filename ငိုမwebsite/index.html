@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Win Ko Gang</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <i class="me-2"></i>Win Ko Gang
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home"><i class="bi bi-house me-1"></i>Home</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+              <i class="bi bi-people me-1"></i>Members
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#gallery"><i class="bi bi-grid me-2"></i>Gallery</a></li>
+              <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#membershipModal"><i class="bi bi-person-plus me-2"></i>Join Gang</a></li>
+              <li><hr class="dropdown-divider"></li>
+              
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about"><i class="bi bi-info-circle me-1"></i>About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact"><i class="bi bi-envelope me-1"></i>Contact</a>
+          </li>
+        </ul>
+        <div class="d-flex">
+          <button class="btn btn-outline-light me-2" data-bs-toggle="modal" data-bs-target="#membershipModal">
+            <i class="bi bi-person-plus me-1"></i>နောင်လာနောက်သားများအတွက်
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home" class="main-header">
+    <div class="container">
+      <h1 class="display-3 mb-3">Win Ko Gang</h1>
+      <p class="lead">နောင်လာနောက်သားများအတွက် ဖန်တီးတီစောက်ထားသော ဝင်းကို gang memberဝင်များ။</p>
+      <div class="join-banner-container mt-4">
+        <div class="join-banner">
+          <button class="btn btn-primary btn-lg join-btn" data-bs-toggle="modal" data-bs-target="#membershipModal">
+            <i class="bi bi-person-plus me-2">နောင်လာနောက်သားများအတွက်</i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Membership Modal -->
+  <div class="modal fade" id="membershipModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header bg-dark text-light">
+          <h5 class="modal-title"><i class="bi bi-shield-plus me-2"></i>Join Win Ko Gang</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="membershipForm" class="needs-validation" novalidate>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="firstName" class="form-label">နာမည် *</label>
+                <input type="text" class="form-control" id="firstName" required>
+                <div class="invalid-feedback">ကိုမေကိုလိုကုလားလေ name ထည့် </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="lastName" class="form-label"> ဘိုဘွားအစင်အလာ ပေးထားသောနာမည် </label>
+                <input type="text" class="form-control" id="lastName" required>
+                <div class="invalid-feedback">မင်းအဘနမည် ထည့်ကွာ </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email *</label>
+              <input type="email" class="form-control" id="email" required>
+              <div class="invalid-feedback">email ထည့် </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="tel" class="form-control" id="phone">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="age" class="form-label">Age *</label>
+                <input type="number" class="form-control" id="age" min="16" max="99" required>
+                <div class="invalid-feedback">မင်အသက်ကို မှန်မှန်ပြော ငါလိုးမသားလေ </div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="skills" class="form-label">Special Skills</label>
+              <textarea class="form-control" id="skills" rows="3" placeholder="Tell us about your special abilities..."></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="membershipType" class="form-label">Membership Type *</label>
+              <select class="form-select" id="membershipType" required>
+                <option value="">Choose...</option>
+                <option value="rookie">Rookie Member</option>
+                <option value="regular">Regular Member</option>
+                <option value="elite">Elite Member</option>
+                <option value="vip">VIP Member</option>
+              </select>
+              <div class="invalid-feedback">type ရွေး မအေလို </div>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="terms" required>
+              <label class="form-check-label" for="terms">
+                I agree to the <a href="TermsAndConditions.html" class="text-decoration-none">terms and conditions</a> *
+              </label>
+              <div class="invalid-feedback">the terms and conditions ကို ဖတ် သားလေ</div>
+            </div>
+            <div class="mb-3 form-check">
+              <input type="checkbox" class="form-check-input" id="newsletter">
+              <label class="form-check-label" for="newsletter">
+                gang လေကို subscribe လုပ် 
+              </label>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" form="membershipForm" class="btn btn-primary">
+            <i class="bi bi-check-circle me-1"></i>Join Gang
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <main id="gallery" class="gallery-wrap">
+    <div class="container">
+      <h2 class="text-center mb-5 text-light">Original ဂေးဆိုးလေများ </h2>
+      <div class="gallery row">
+        <!-- Card  -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <article class="card h-100">
+            <div class="frame">
+              <img src="image2/IMAGE 2025-10-20 13:42:15.jpg" alt="Myint Mo Min Htut" class="card-img">
+            </div>
+            <div class="caption">
+              <h5 class="card-title">Myint Mo Min Htut</h5>
+              <p class="meta">မြင့်မိုရ်သညု့ အောက်တိုဘာရက်နေ့ ဉှ၀ဇု:၁လ:ဒုအတွင်း မင်းကွᄀးလဲးဗနှု့မစ်ယောက်Gang Bang(ဂန်းဘန်း) ပြုလုပ်ခရ့ပါသညု။</p>
+            </div>
+          </article>
+        </div>
+
+        <!-- Card -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <article class="card h-100">
+            <div class="frame">
+              <img src="images/LoMaAungThuRein.jpg" alt="Aung Thu Rein" class="card-img">
+            </div>
+            <div class="caption">
+              <h5 class="card-title">Aung Thi Rein, Win Ko</h5>
+              <p class="meta">မညိန်းသမားဝင်းကို ကိုအောက်တိုဘာလဲ့ရက်နေ့ ကောင်းကောင်းမြို့မာဖမ်းစီးရမိခရ့ပါတွ</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <article class="card h-100">
+            <div class="frame">
+              <img src="images/PhoeKalar.jpg" alt="Phoe La Pyae" class="card-img">
+            </div>
+            <div class="caption">
+              <h5 class="card-title">Phoe La Pyae (Messi stepson)</h5>
+              <p class="meta">
+                Man u fanမင်းဖုန်းပြည့်ဆိုသူသည် liverpool fanဖိုးလပြည့်အား Liverpool 1 - 2 man uဆိုပြီးလေတိုက်ခဲ့ပါသဖြင့် မကျေနပ်သောဖိုးလပြည့်သည် မင်းဖုန်းပြည့်အားဓားနဲ့အချက်၆၇ချက်ထိုးပြီးထွက်ပြေး 
+ရာဇ၀တ်သားဖိုးလပြည့်လွတ်မြောက်နေပါသဖြင့် ကလေးလူကြီးအားလုံးသတိနဲ့နေကြပါရန်ပြောကြားလို၏။
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <article class="card h-100">
+            <div class="frame">
+              <img src="images/MinPhoneKalar.jpg" alt="Min Phone Pyae" class="card-img">
+            </div>
+            <div class="caption">
+              <h5 class="card-title">Min Phone Pyae</h5>
+              <p class="meta">
+                အာချောင်လိုဓားနဲ့အထိုးခံခဲ့ရသည့်ကောင်လေး
+
+သူ့နာမည်ကတော့မင်းဖုန်းပြည့်လိုသိရပါတယ် သူဟာနတ်တလင်းမြိုနယ်မှာ လိင်တုရောင်း၀ယ်ရေးနှင့်တခြားတရားမ၀င်သောအလုပ်များကိုလုပ်နေသူဟုသိရပါတယ် ရဲတွေကိုလဲလက်ထိုးထားသောကြောင့်သူ့ကိုဘယ်သူမှမထိရဲကြပါဘူး
+</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <article class="card h-100">
+            <div class="frame">
+              <img src="images/YaTu.jpg" alt="" class="card-img">
+            </div>
+            <div class="caption">
+              <h5 class="card-title">YaTu</h5>
+              <p class="meta">
+                သူ့နာမည်ကတော့ရတုလိုခေါ်ပါတယ် သူကတော့ဂေးသူငယ်ချင်းများကိုအိပ်ခေါ်အိပ်ရာ ဂေးသူငယ်ချင်းတွေသူအိပ်နေတုန်း မဒိန်းကျင့်လိုက်လို စအိုကွဲပြီးသေဆုံးခဲ့ရသည့်ကောင်လေးပါ
+
+မဒိန်းကျင့်ခဲ့သောသူများ - နတ်တလင်းသခင်ကြီး . ခိုင်သီတာဘုရင် နှင့် ဆံစက်ဘုရင်</p>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <article class="card h-100">
+            <div class="frame">
+              <img src="images/" alt="TeTe" class="card-img">
+            </div>
+            <div class="caption">
+              <h5 class="card-title">Te Te (chad chinese b)</h5>
+              <p class="meta"></p>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <article class="card h-100">
+            <div class="frame">
+              <img src="images/" alt="Nyi Nyi" class="card-img">
+            </div>
+            <div class="caption">
+              <h5 class="card-title">Nyi Nyi (introvert lay)</h5>
+              <p class="meta"></p>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <article class="card h-100">
+            <div class="frame">
+              <img src="images/" alt="BhoneKhant" class="card-img">
+            </div>
+            <div class="caption">
+              <h5 class="card-title">Bhone Khant (latina)</h5>
+              <p class="meta"></p>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <article class="card h-100">
+            <div class="frame">
+              <img src="images/ALkar.jpg" alt="AlKar" class="card-img">
+            </div>
+            <div class="caption">
+              <h5 class="card-title">အာကာ</h5>
+              <p class="meta"></p>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <article class="card h-100">
+            <div class="frame">
+              <img src="images/" alt="KoShine" class="card-img">
+            </div>
+            <div class="caption">
+              <h5 class="card-title">Ko Shine (HIV AIDS paitent)</h5>
+              <p class="meta"></p>
+            </div>
+          </article>
+        </div>
+
+
+        <div class="col-md-6 col-lg-4 mb-4">
+          <article class="card h-100">
+            <div class="frame">
+              <img src="images/MinSitFemboy.jpg" alt="MinShit" class="card-img">
+            </div>
+            <div class="caption">
+              <h5 class="card-title">Min Sit (femboys and lbtv transgender)</h5>
+              <p class="meta"> </p>
+            </div>
+          </article>
+        </div>
+        <!-- Add more placeholder cards -->
+        <div class="col-md-6 col-lg-4 mb-4">
+          <article class="card h-100 placeholder-card">
+            <div class="frame">
+              <div class="placeholder-img d-flex align-items-center justify-content-center">
+                <i class="bi bi-person-plus-fill display-1 text-muted"></i>
+              </div>
+            </div>
+            <div class="caption">
+              <h5 class="card-title">ဂေးဆိုးလေးများ member join ကြပါဆို့.ဩ။ </h5>
+              <p class="meta text-muted">Become a member today and be part of our exclusive community.</p>
+              <button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#membershipModal">
+                <i class="bi bi-person-plus me-1"></i>Join Now
+              </button>
+            </div>
+          </article>
+        </div>
+        
+      </div>
+    </div>
+  </main>
+
+  <!-- About Section -->
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center text-light">
+          <h2 class="mb-4">About Win Ko Gang</h2>
+          <p class="lead mb-4"></p>
+          <p>Our gang is loyalty, respect, and brotherhood. Join us in our journey of growth and adventure. or we gonna find and loe you</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-5 bg-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center text-light">
+          <h2 class="mb-4">Contact Us</h2>
+          <p class="mb-4">နောင်လာနောက်သားများတို့ အတွက်ဆက်သွယ်ရန် </p>
+          <div class="row">
+            <div class="col-md-4 mb-3">
+              <i class="bi bi-envelope-fill display-4 mb-3 text-primary"></i>
+              <p>winkogang@example.com</p>
+            </div>
+            <div class="col-md-4 mb-3">
+              <i class="bi bi-phone-fill display-4 mb-3 text-primary"></i>
+              <p>၀၉၁၂၃၄၅၆၇၈</p>
+            </div>
+            <div class="col-md-4 mb-3">
+              <i class="bi bi-geo-alt-fill display-4 mb-3 text-primary"></i>
+              <p>နတ်တလင်း , ပဲခူတိုင်းဒေသကြီး , သာယာဝတီခရိုင်, မီရမ်မာ </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
