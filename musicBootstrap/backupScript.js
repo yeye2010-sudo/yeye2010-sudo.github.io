@@ -56,7 +56,7 @@ navLinks.forEach(link => {
             settingsContent.style.display = 'block';
         } else if (linkText === 'Myanmar Songs') {
             myanmarSongsContent.style.display = 'block';
-        } else if (linkText === 'Hip-Hop'){
+        } else if (linkText === 'Hip-Hop&Pop'){
             hipHopSongsContent.style.display = 'block';
         } else if (linkText === 'Lofi'){
             lofiSongsContent.style.display = 'block';
