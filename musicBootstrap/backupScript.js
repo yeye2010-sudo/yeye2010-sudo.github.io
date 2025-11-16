@@ -35,6 +35,7 @@ const settingsContent = document.getElementById('settingsContent');
 const myanmarSongsContent = document.getElementById('myanmarSongsContent');
 const lofiSongsContent = document.getElementById('lofiSongsContent');
 const hipHopSongsContent = document.getElementById('hipHopSongsContent');
+const classicalSongsContent = document.getElementById('classicalSongsContent');
 
 navLinks.forEach(link => {
 
@@ -48,7 +49,7 @@ navLinks.forEach(link => {
         myanmarSongsContent.style.display = 'none';
         lofiSongsContent.style.display = 'none';
         hipHopSongsContent.style.display ='none';
-
+        classicalSongsContent.style.display = 'none';
 
         // Show the appropriate content
         if (linkText === 'Setting') {
@@ -59,9 +60,12 @@ navLinks.forEach(link => {
             hipHopSongsContent.style.display = 'block';
         } else if (linkText === 'Lofi'){
             lofiSongsContent.style.display = 'block';
+        }else if (linkText ==="Classical"){
+            classicalSongsContent.style.display = 'block';
         }else {
             homeContent.style.display = 'block';
         }
+
     });
 });
 
@@ -101,32 +105,32 @@ const myanmarSongs = {
             cover: "images/ထူးအင်သင်.jpg"
         },
         {
-            title: "ဆွေးတည်",
+            title: "ဆွေးတယ်",
             artist: "ထူအင်းသင်",
             src: "audios/Myanmar Songs/ထူအင်းသင်/ထူးအိမ်သင် - ဆွေးတယ် (Lyric Video).mp3",
             cover: "images/ထူးအင်သင်.jpg"
         },
         {
-            title: "နွေဧူကံ့ကော်",
-            artist: "ထူအင်းသင်",
+            title: "နွေဦးကံ့ကော်",
+            artist: "ထူအင်သင်",
             src: "audios/Myanmar Songs/ထူအင်းသင်/ထူးအိမ်သင် - နွေဦးကံ့ကော် (Lyric Video).mp3",
             cover: "images/ထူးအင်သင်.jpg"
         },
         {
             title: "အချစ်ဆိုသည်မှာ",
-            artist: "ထူအင်းသင်",
+            artist: "ထူအင်သင်",
             src: "audios/Myanmar Songs/ထူအင်းသင်/ထူးအိမ်သင် - အချစ်ဆိုသည်မှာ (Lyric Video).mp3",
             cover: "images/ထူးအင်သင်.jpg"
         },
         {
             title: "အဓိပတိလမ်းကခြေရာများ",
-            artist: "ထူအင်းသင်",
+            artist: "ထူအင်သင်",
             src: "audios/Myanmar Songs/ထူအင်းသင်/ထူးအိမ်သင် - အဓိပတိလမ်းကခြေရာများ (Lyric Video).mp3",
             cover: "images/ထူးအင်သင်.jpg"
         },
         {
             title: "အမေ့အိမ်",
-            artist: "ထူအင်းသင်",
+            artist: "ထူအင်သင်",
             src: "audios/Myanmar Songs/ထူအင်းသင်/အမေ့အိမ် - ထူးအိမ်သင် (Lyrics Song).mp3",
             cover: "images/ထူးအင်သင်.jpg"
         }
@@ -145,9 +149,9 @@ const myanmarSongs = {
             cover: "images/ဘိုဖြူ.jpg"
         },
         {
-            title: "Myay Pyant Thu Lay",
+            title: "မြေပြန့်သူလေး",
             artist: "ဘိုဖြူ",
-            src: "audios/Myanmar Songs/ဘိုဖြူ/မြေပြန့်သုလေး (Myay Pyant Thu Lay) -  ဘိုဖြူ (Bo Phyu).mp3",
+            src: "audios/Myanmar Songs/ဘိုဖြူ/မြေပြန့်သူလေး (Myay Pyant Thu Lay) -  ဘိုဖြူ (Bo Phyu).mp3",
             cover: "images/ဘိုဖြူ.jpg"
         },
         {
@@ -290,7 +294,7 @@ const hipHopSongs = {
         {
             title:"Shape of you",
             artist:"Ed Sheeran",
-            src:"audios/Hip-hops/TopSongs\Ed Sheeran - Shape of You (Official Music Video).mp3",
+            src:"audios/Hip-hops/TopSongs/Ed Sheeran - Shape of You (Official Music Video).mp3",
             cover:"images/ronaldo.jpg"
         },
         {
@@ -304,6 +308,24 @@ const hipHopSongs = {
             artist:"PSY",
             src:"audios/Hip-hops/TopSongs/PSY - GANGNAM STYLE(강남스타일) MV.mp3",
             cover:"images/oppaCat.jpg"
+        },
+        {
+            title:"Waka Waka",
+            artist:"Shakira",
+            src:"audios/Hip-hops/TopSongs/Shakira - Waka Waka (This Time for Africa) (The Official 2010 FIFA World Cup™ Song).mp3",
+            cover:"images/worldCup2010.jpg"
+        },
+        {
+            title:"Uptown Funk",
+            artist:"Mark Ronson",
+            src:"audios/Hip-hops/TopSongs/Mark Ronson - Uptown Funk (Official Video) ft. Bruno Mars.mp3",
+            cover:"images/coolCat.jpg"
+        },
+        {
+            title:"See you again",
+            artist:"Wiz Khalifa",
+            src: "audios/Hip-hops/TopSongs/Wiz Khalifa - See You Again ft. Charlie Puth [Official Video] Furious 7 Soundtrack.mp3",
+            cover:"images/cat.jpg"
         }
     ]
 };
@@ -369,20 +391,81 @@ const lofiSongs = {
         } 
     ]
 };
-// Flattened list for random play
-const allMyanmarSongs = [
-    ...myanmarSongs.htooEainThin,
-    ...myanmarSongs.boPhyu
-];
-const allLofiSongs = [
-    ...lofiSongs.lofi,
-    ...lofiSongs.jazz
-];
-const allHipHopSongs = [
-    ...hipHopSongs.GoldenSongs,
-    ...hipHopSongs.TikTokSongs,
-    ...hipHopSongs.PopularSongs
-]
+//classical songs playlist
+const classicalSongs ={
+    mozart: [
+        {
+            title:"Lacrimosa",
+            artist:"Mozart",
+            src:"audios/Classical Songs/Mozart/Mozart - Lacrimosa.mp3",
+            cover: "images/mozart.jpg"
+        },
+        {
+            title:"Eine Kleine Nachtmusik",
+            artist:"Mozart",
+            src:"audios/Classical Songs/Mozart/Eine Kleine Nachtmusik - Mozart.mp3",
+            cover: "images/mozart.jpg"
+        },
+        {
+            title:"Mozart Symphony 40, Molto Allegro",
+            artist:"Mozart",
+            src:"audios/Classical Songs/Mozart/Mozart Symphony 40 in G Minor, K 550 - 1. Molto Allegro.mp3",
+            cover: "images/mozart.jpg"
+        },
+        {
+            title:"Woldgang Amadeus",
+            artist:"Mozart",
+            src:"audios/Classical Songs/Mozart/Wolfgang Amadeus Mozart - Piano Concerto No. 21 - Andante.mp3",
+            cover: "images/mozart.jpg"
+        }
+
+    ],
+    beethoven:[
+        {
+            title:"Moonlight Sonata",
+            artist:"Beethoven",
+            src:"audios/Classical Songs/Beethoven/Beethoven - Moonlight Sonata (FULL).mp3",
+            cover:"images/beethoven.jpg"
+        },
+        {
+            title:"Symphony 7",
+            artist:"Beethoven",
+            src:"audios/Classical Songs/Beethoven/Beethoven - Symphony No.7 in A major op.92 - II, Allegretto.mp3",
+            cover:"images/beethoven.jpg"
+        },
+        {
+            title:"Ludwig Van Symphony 9",
+            artist:"Beethoven",
+            src:"audios/Classical Songs/Beethoven/Ludwig Van Beethovens Ninth Symphony.mp3",
+            cover:"images/beethoven.jpg"
+        },
+        {
+            title:"",
+            artist:"Beethoven",
+            src:"",
+            cover:"images/beethoven.jpg"
+        },
+        {
+            title:"Symphony 5",
+            artist:"Beethoven",
+            src:"audios/Classical Songs/Beethoven/Beethovens 5th Symphony.mp3",
+            cover:"images/beethoven.jpg"
+        },
+        {
+            title:"",
+            artist:"Beethoven",
+            src:"",
+            cover:"images/beethoven.jpg"
+        },
+        {
+            title:"",
+            artist:"Beethoven",
+            src:"",
+            cover:"images/beethoven.jpg"
+        }
+    ]
+};
+
 // Modal player elements
 const musicPlayerModalElement = document.getElementById('musicPlayerModal');
 const modalAudio = document.getElementById('modalAudio');
@@ -395,7 +478,7 @@ const modalProgressBar = document.getElementById('modalProgressBar');
 const modalVolumeBar = document.getElementById('modalVolumeBar');
 const modalPlayPauseBtn = document.getElementById('modalPlayPauseBtn');
 const modalPlayPauseIcon = document.getElementById('modalPlayPauseIcon');
-const modalShuffleBtn = document.getElementById('modalShuffleBtn');
+
 
 let musicPlayerModal = null;
 let currentSongIndex = -1;
@@ -477,14 +560,30 @@ function loadLofiSongs(){
         jazzContainer.append(songCard);
     });
 }
+// load classical songs into categories
+function loadClassicalSongs(){
+    const mozartContainer = document.getElementById('mozartSongs');
+    const beethovenContainer = document.getElementById('beethovenSongs');
 
+    if(!mozartContainer || !beethovenContainer) return;
+
+    classicalSongs.mozart.forEach(song =>{
+        const songCard = createSongCard(song);
+        mozartContainer.append(songCard);
+    });
+
+    classicalSongs.beethoven.forEach(song =>{
+        const songCard = createSongCard(song);
+        beethovenContainer.append(songCard);
+    });
+}
 // create Bootstrap song card
 function createSongCard(song) {
     const col = document.createElement('div');
     col.className = 'col-sm-6 col-md-4 col-lg-3';
 
     col.innerHTML = `
-        <div class="card h-100 bg-dark text-white" style:"height:100%;">
+        <div class="card h-100 bg-dark text-white" style:"height:100%; margin:20px auto">
             <img src="${song.cover}" class="card-img-top" style="height:200px;object-fit:cover;" alt="${song.title}>
             <div class="card-body d-flex flex-column">
                 <h5 class="card-title">${song.title}</h5>
@@ -507,8 +606,6 @@ function createSongCard(song) {
 // opening a song in the modal player
 function openSongInModal(song) {
     if (!modalAudio || !musicPlayerModal) return;
-
-    currentSongIndex = allMyanmarSongs.indexOf(song);
 
     if (modalSongTitle) modalSongTitle.textContent = song.title;
     if (modalSongArtist) modalSongArtist.textContent = song.artist;
@@ -586,20 +683,7 @@ if (modalPlayPauseBtn && modalAudio) {
     });
 }
 
-// Random button: play a random Myanmar song
-if (modalShuffleBtn) {
-    modalShuffleBtn.addEventListener('click', () => {
-        if (!allMyanmarSongs.length) return;
 
-        let randomIndex = Math.floor(Math.random() * allMyanmarSongs.length);
-        if (allMyanmarSongs.length > 1 && randomIndex === currentSongIndex) {
-            randomIndex = (randomIndex + 1) % allMyanmarSongs.length;
-        }
-
-        const randomSong = allMyanmarSongs[randomIndex];
-        openSongInModal(randomSong);
-    });
-}
 // Simple time formatter
 function formatTime(seconds) {
     if (isNaN(seconds)) return '0:00';
@@ -612,3 +696,4 @@ function formatTime(seconds) {
 loadMyanmarSongs();
 loadLofiSongs();
 loadHipHopSongs();
+loadClassicalSongs();

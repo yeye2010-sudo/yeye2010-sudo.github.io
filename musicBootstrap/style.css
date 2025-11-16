@@ -259,7 +259,10 @@ body {
         transform: scale(1.1);
     }
 }
-
+.category-title{
+    margin: 30px auto;
+    margin-top:10px;
+}
 /* Settings Section */
 .settings-section {
     background-color: var(--bg-light);
