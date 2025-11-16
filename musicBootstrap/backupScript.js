@@ -301,7 +301,7 @@ const hipHopSongs = {
             title:"SunFlower",
             artist:"Post Malone, Swan Lee",
             src:"audios/Hip-hops/TopSongs/Post Malone, Swae Lee - Sunflower (Spider-Man Into the Spider-Verse) (Official Video).mp3",
-            cover:"images/spiderman.jpg"
+            cover:"images/spidermMan.jpg"
         },
         {
             title:"Gangnam style",
