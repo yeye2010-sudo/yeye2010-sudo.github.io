@@ -336,7 +336,7 @@ const lofiSongs = {
             title:"sunset",
             artist: "lukrembo",
             src:"audios/LOFI/Lofi/lukrembo - sunset (no copyright music).mp3",
-            cover:"images/lofiGirl.jpg"
+            cover:"images/sunset.jpg"
         },
         {
             title:"cute",
@@ -360,7 +360,7 @@ const lofiSongs = {
             title:"space",
             artist: "lofi studying",
             src:"audios/LOFI/Lofi/Space Aquarium - Lofi Study  Relaxation Music for Deep Focus.mp3",
-            cover:"images/lofiGirl.jpg"
+            cover:"images/space.jpg"
         }
     
     ],
