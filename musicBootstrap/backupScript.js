@@ -90,7 +90,7 @@ themeButtons.forEach(button => {
 // music player functions 
 
 // Myanmar Songs Data
-const myanmarSongs = {
+let myanmarSongs = {
     htooEainThin: [
         {
             title: "Ta Nay Nay Tot Chit Lar Late Myi",
@@ -166,11 +166,25 @@ const myanmarSongs = {
             src: "audios/Myanmar Songs/ဘိုဖြူ/အိပ်မက်ဖောင်ကြီး -ဘိုဖြူ   Eain Mat Phaung Gyi - Bo Phyu [Official MV] [4K Quality].mp3",
             cover: "images/ဘိုဖြူ.jpg"
         }
+    ],
+    othermyanmar: [
+        {
+            title: "စာမျက်နှာတစဆယ့်ငါး",
+            artist: "လေဖြူ",
+            src: "audios/Myanmar Songs/လေးဖြူ/လေးဖြူ - စာမျက်နှာတစ်ဆယ့်ငါး [Official MV].mp3",
+            cover: "images/layphyu.jpg"
+        },
+        {
+            title:"မဟာဆန်သူ ",
+            artist: "ခင်မောင်တိုး",
+            src: "audios/Myanmar Songs/Old Myanmar Songs/မဟာဆန်သူ - ခင်မောင်တိုး.mp3",
+            cover:"images/butterfly.jpg"
+        }
     ]
 };
 
 // hip hop songs playlist
-const hipHopSongs = {
+let hipHopSongs = {
     GoldenSongs: [
         {
             title:"Faded",
@@ -330,7 +344,7 @@ const hipHopSongs = {
     ]
 };
 // lofi songs playlist
-const lofiSongs = {
+let lofiSongs = {
     lofi: [
         {
             title:"sunset",
@@ -381,7 +395,7 @@ const lofiSongs = {
             title:"detective story",
             artist: "infraction",
             src:"audios/LOFI/Jazz/Upbeat Jazz Comedy by Infraction [No Copyright Music]  Detective Story.mp3",
-            cover:"images/jazzMan.jpg"
+            cover:"images/detective.jpg"
         },
         {
             title:"jazz club",
@@ -392,7 +406,7 @@ const lofiSongs = {
     ]
 };
 //classical songs playlist
-const classicalSongs ={
+let classicalSongs ={
     mozart: [
         {
             title:"Lacrimosa",
@@ -440,44 +454,38 @@ const classicalSongs ={
             cover:"images/beethoven.jpg"
         },
         {
-            title:"",
-            artist:"Beethoven",
-            src:"",
-            cover:"images/beethoven.jpg"
-        },
-        {
             title:"Symphony 5",
             artist:"Beethoven",
             src:"audios/Classical Songs/Beethoven/Beethovens 5th Symphony.mp3",
             cover:"images/beethoven.jpg"
         },
         {
-            title:"",
+            title:"Turkish March",
             artist:"Beethoven",
-            src:"",
+            src:"audios/Classical Songs/Beethoven/BEETHOVEN turkish march.mp3",
             cover:"images/beethoven.jpg"
         },
         {
-            title:"",
+            title:"Symphony 6",
             artist:"Beethoven",
-            src:"",
+            src:"audios/Classical Songs/Beethoven/Beethoven - 6th Symphony - Pastoral.mp3",
             cover:"images/beethoven.jpg"
         }
     ]
 };
 
 // Modal player elements
-const musicPlayerModalElement = document.getElementById('musicPlayerModal');
-const modalAudio = document.getElementById('modalAudio');
-const modalAlbumArt = document.getElementById('modalAlbumArt');
-const modalSongTitle = document.getElementById('modalSongTitle');
-const modalSongArtist = document.getElementById('modalSongArtist');
-const modalCurrentTime = document.getElementById('modalCurrentTime');
-const modalDuration = document.getElementById('modalDuration');
-const modalProgressBar = document.getElementById('modalProgressBar');
-const modalVolumeBar = document.getElementById('modalVolumeBar');
-const modalPlayPauseBtn = document.getElementById('modalPlayPauseBtn');
-const modalPlayPauseIcon = document.getElementById('modalPlayPauseIcon');
+let musicPlayerModalElement = document.getElementById('musicPlayerModal');
+let modalAudio = document.getElementById('modalAudio');
+let modalAlbumArt = document.getElementById('modalAlbumArt');
+let modalSongTitle = document.getElementById('modalSongTitle');
+let modalSongArtist = document.getElementById('modalSongArtist');
+let modalCurrentTime = document.getElementById('modalCurrentTime');
+let modalDuration = document.getElementById('modalDuration');
+let modalProgressBar = document.getElementById('modalProgressBar');
+let modalVolumeBar = document.getElementById('modalVolumeBar');
+let modalPlayPauseBtn = document.getElementById('modalPlayPauseBtn');
+let modalPlayPauseIcon = document.getElementById('modalPlayPauseIcon');
 
 
 let musicPlayerModal = null;
@@ -500,86 +508,91 @@ if (musicPlayerModalElement && typeof bootstrap !== 'undefined') {
 
 // Load Myanmar Songs into categories as Bootstrap card grid
 function loadMyanmarSongs() {
-    const htooEainThinContainer = document.getElementById('htooEainThinSongs');
-    const boPhyuContainer = document.getElementById('boPhyuSongs');
-
-    if (!htooEainThinContainer || !boPhyuContainer) return;
+    let htooEainThinContainer = document.getElementById('htooEainThinSongs');
+    let boPhyuContainer = document.getElementById('boPhyuSongs');
+    let otherContainer = document.getElementById('otherMyanmarSongs');
+    if (!htooEainThinContainer || !boPhyuContainer || !otherContainer) return;
 
     // ထူအင်းသင် songs
     myanmarSongs.htooEainThin.forEach(song => {
-        const songCard = createSongCard(song);
+        let songCard = createSongCard(song);
         htooEainThinContainer.appendChild(songCard);
     });
 
     // ဘိုဖြူ songs
     myanmarSongs.boPhyu.forEach(song => {
-        const songCard = createSongCard(song);
+        let songCard = createSongCard(song);
         boPhyuContainer.appendChild(songCard);
     });
+
+    myanmarSongs.othermyanmar.forEach(song => {
+        let songCard = createSongCard(song);
+        otherContainer.appendChild(songCard);
+    })
 }
 
 // load hip hop songs into categories
 function loadHipHopSongs(){
-    const tiktokContainer = document.getElementById('tiktokSongs');
-    const popularContainer = document.getElementById('popularSongs');
-    const goldenContainer = document.getElementById('goldenSongs');
+    let tiktokContainer = document.getElementById('tiktokSongs');
+    let popularContainer = document.getElementById('popularSongs');
+    let goldenContainer = document.getElementById('goldenSongs');
 
     if(!goldenContainer || ! popularContainer || !tiktokContainer) return;
 
     //golden songs
     hipHopSongs.GoldenSongs.forEach(song =>{
-        const songCard = createSongCard(song);
+        let songCard = createSongCard(song);
         goldenContainer.append(songCard);
     });
 
     // tik tok songs
     hipHopSongs.TikTokSongs.forEach(song =>{
-        const songCard = createSongCard(song);
+        let songCard = createSongCard(song);
         tiktokContainer.append(songCard);
     });
 
     //popular songs
     hipHopSongs.PopularSongs.forEach(song =>{
-        const songCard = createSongCard(song);
+        let songCard = createSongCard(song);
         popularContainer.append(songCard);
     });
 }
 // load lofi songs into categories 
 function loadLofiSongs(){
-    const lofiContainer = document.getElementById('lofiSongs');
-    const jazzContainer = document.getElementById('jazzSongs');
+    let lofiContainer = document.getElementById('lofiSongs');
+    let jazzContainer = document.getElementById('jazzSongs');
 
     if(!lofiContainer || !jazzContainer) return;
 
     lofiSongs.lofi.forEach(song =>{
-        const songCard = createSongCard(song);
+        let songCard = createSongCard(song);
         lofiContainer.append(songCard);
     });
     lofiSongs.jazz.forEach(song =>{
-        const songCard = createSongCard(song);
+        let songCard = createSongCard(song);
         jazzContainer.append(songCard);
     });
 }
 // load classical songs into categories
 function loadClassicalSongs(){
-    const mozartContainer = document.getElementById('mozartSongs');
-    const beethovenContainer = document.getElementById('beethovenSongs');
+    let mozartContainer = document.getElementById('mozartSongs');
+    let beethovenContainer = document.getElementById('beethovenSongs');
 
     if(!mozartContainer || !beethovenContainer) return;
 
     classicalSongs.mozart.forEach(song =>{
-        const songCard = createSongCard(song);
+        let songCard = createSongCard(song);
         mozartContainer.append(songCard);
     });
 
     classicalSongs.beethoven.forEach(song =>{
-        const songCard = createSongCard(song);
+        let songCard = createSongCard(song);
         beethovenContainer.append(songCard);
     });
 }
 // create Bootstrap song card
 function createSongCard(song) {
-    const col = document.createElement('div');
+    let col = document.createElement('div');
     col.className = 'col-sm-6 col-md-4 col-lg-3';
 
     col.innerHTML = `
@@ -595,7 +608,7 @@ function createSongCard(song) {
         </div>
     `;
 
-    const playButton = col.querySelector('button');
+    let playButton = col.querySelector('button');
     playButton.addEventListener('click', () => {
         openSongInModal(song);
     });
@@ -637,7 +650,7 @@ if (modalAudio && modalProgressBar && modalCurrentTime && modalDuration) {
     modalAudio.addEventListener('timeupdate', () => {
         if (!modalAudio.duration) return;
 
-        const progress = (modalAudio.currentTime / modalAudio.duration) * 100;
+        let progress = (modalAudio.currentTime / modalAudio.duration) * 100;
         modalProgressBar.value = progress;
         modalCurrentTime.textContent = formatTime(modalAudio.currentTime);
         modalDuration.textContent = formatTime(modalAudio.duration);
@@ -648,7 +661,7 @@ if (modalAudio && modalProgressBar && modalCurrentTime && modalDuration) {
 if (modalProgressBar && modalAudio) {
     modalProgressBar.addEventListener('input', () => {
         if (!modalAudio.duration) return;
-        const seekTime = (modalProgressBar.value / 100) * modalAudio.duration;
+        let seekTime = (modalProgressBar.value / 100) * modalAudio.duration;
         modalAudio.currentTime = seekTime;
     });
 }
@@ -684,11 +697,11 @@ if (modalPlayPauseBtn && modalAudio) {
 }
 
 
-// Simple time formatter
+// music time formatter
 function formatTime(seconds) {
     if (isNaN(seconds)) return '0:00';
-    const mins = Math.floor(seconds / 60);
-    const secs = Math.floor(seconds % 60);
+    let mins = Math.floor(seconds / 60);
+    let secs = Math.floor(seconds % 60);
     return `${mins}:${secs.toString().padStart(2, '0')}`;
 }
 
